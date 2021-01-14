@@ -7,7 +7,7 @@ int main(int argc, char *args[]) {
 
     game->Initialize(WINDOW_WIDTH, WINDOW_HEIGHT);
 
-    while(game->IsRunning()) {
+    while (game->IsRunning()) {
         game->ProcessInput();
         game->Update();
         game->Render();

@@ -1,11 +1,10 @@
-//
-// Created by petrusprinsloo on 2021/01/13.
-//
-
-#ifndef INC_2D_ENGINE_CONSTANTS_H
-#define INC_2D_ENGINE_CONSTANTS_H
+#ifndef CONSTANTS_H
+#define CONSTANTS_H
 
 const unsigned int WINDOW_WIDTH = 800;
 const unsigned int WINDOW_HEIGHT = 600;
 
-#endif //INC_2D_ENGINE_CONSTANTS_H
+const unsigned int FPS = 60;
+const unsigned int FRAME_TARGET_TIME = 1000 / FPS;
+
+#endif
