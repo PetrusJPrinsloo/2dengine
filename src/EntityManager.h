@@ -12,10 +12,11 @@ class EntityManager {
         void ClearData();
         void Update(float deltaTime);
         void Render();
-        bool HasNoEntities();
-        Entity& AddEntity(std::string entityName);
+        bool HasNoEntities() const;
+        unsigned int GetEntityCount() const;
+        void ListAllEntities() const;
         std::vector<Entity*> GetEntities() const;
-        unsigned int GetEntityCount();
+        Entity& AddEntity(std::string entityName);
 };
 
 #endif

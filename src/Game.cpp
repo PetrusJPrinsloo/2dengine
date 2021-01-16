@@ -1,10 +1,13 @@
 #include <iostream>
 #include "./Constants.h"
 #include "./Game.h"
+#include "./AssetManager.h"
 #include "./Components/TransformComponent.h"
+#include "./Components/SpriteComponent.h"
 #include "../lib/glm/glm.hpp"
 
 EntityManager manager;
+AssetManager* Game::assetManager = new AssetManager(&manager);
 SDL_Renderer* Game::renderer;
 
 Game::Game() {
@@ -48,8 +51,14 @@ void Game::Initialize(int width, int height) {
 }
 
 void Game::LoadLevel(int levelNumber) {
-    Entity& newEntity(manager.AddEntity("projectile"));
+    /* Start including new assets to the assetmanager list */
+    std::string textureFilePath = "./assets/images/tank-big-right.png";
+    assetManager->AddTexture("tank-image", textureFilePath.c_str());
+
+    /* Start including entities and also components to them */
+    Entity& newEntity(manager.AddEntity("tank"));
     newEntity.AddComponent<TransformComponent>(0, 0, 20, 20, 32, 32, 1);
+    newEntity.AddComponent<SpriteComponent>("tank-image");
 }
 
 void Game::ProcessInput() {
@@ -74,8 +83,8 @@ void Game::ProcessInput() {
 void Game::Update() {
     // Wait until 16ms has ellapsed since the last frame
     while (!SDL_TICKS_PASSED(SDL_GetTicks(), ticksLastFrame + FRAME_TARGET_TIME));
-    
-    // Delta time is the difference in ticks from last frame converted to secomds
+
+    // Delta time is the difference in ticks from last frame converted to seconds
     float deltaTime = (SDL_GetTicks() - ticksLastFrame) / 1000.0f;
 
     // Clamp deltaTime to a maximum value
@@ -95,7 +104,7 @@ void Game::Render() {
         return;
     }
 
-    manager.Render(); 
+    manager.Render();
 
     SDL_RenderPresent(renderer);
 }
