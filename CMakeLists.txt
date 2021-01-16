@@ -18,6 +18,8 @@ add_executable(
         src/AssetManager.cpp
         src/TextureManager.h
         src/TextureManager.cpp
+        src/Animation.cpp
+        src/Animation.h
         src/Components/SpriteComponent.h
         src/Components/TransformComponent.h
 )
