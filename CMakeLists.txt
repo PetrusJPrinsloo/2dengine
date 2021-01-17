@@ -20,8 +20,12 @@ add_executable(
         src/TextureManager.cpp
         src/Animation.cpp
         src/Animation.h
+        src/Map.cpp
+        src/Map.h
         src/Components/SpriteComponent.h
         src/Components/TransformComponent.h
+        src/Components/TileComponent.h
+        src/Components/KeyboardControlComponent.h
 )
 
 # Tells CMake that the find scripts are inside inside subfolder /cmake
