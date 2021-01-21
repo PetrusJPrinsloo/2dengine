@@ -22,6 +22,12 @@ add_executable(
         src/Animation.h
         src/Map.cpp
         src/Map.h
+        src/Collision.h
+        src/Collision.cpp
+        src/FontManager.h
+        src/FontManager.cpp
+        src/Components/TextLabelComponent.h
+        src/Components/ColliderComponent.h
         src/Components/SpriteComponent.h
         src/Components/TransformComponent.h
         src/Components/TileComponent.h
