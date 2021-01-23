@@ -32,6 +32,7 @@ add_executable(
         src/Components/TransformComponent.h
         src/Components/TileComponent.h
         src/Components/KeyboardControlComponent.h
+        src/Components/ProjectileEmitterComponent.h
 )
 
 # Tells CMake that the find scripts are inside inside subfolder /cmake
